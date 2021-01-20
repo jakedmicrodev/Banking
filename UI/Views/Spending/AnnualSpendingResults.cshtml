@@ -1,0 +1,212 @@
+﻿@model IEnumerable<Business.Entities.AnnualSpending>
+
+@{
+    ViewBag.Title = "Annual Spending";
+    string FieldName = ViewBag.FieldName;
+    string MonthYear = string.Format("{0} {1}", ViewBag.Month, ViewBag.Year);
+
+    decimal JanTotal = 0;
+    decimal FebTotal = 0;
+    decimal MarTotal = 0;
+    decimal AprTotal = 0;
+    decimal MayTotal = 0;
+    decimal JunTotal = 0;
+    decimal JulTotal = 0;
+    decimal AugTotal = 0;
+    decimal SepTotal = 0;
+    decimal OctTotal = 0;
+    decimal NovTotal = 0;
+    decimal DecTotal = 0;
+    decimal Total = 0;
+}
+
+<h2>Annual Spending @Html.DisplayName(MonthYear)</h2>
+
+<p>
+    @Html.ActionLink("Spending by Category", "AnnualSpendingCategory", null, new { @class = "btn btn-default" })
+    @Html.ActionLink("Spending by Sub Category", "AnnualSpendingSubCategory", null, new { @class = "btn btn-default" })
+    @Html.ActionLink("Spending by Payee", "AnnualSpendingPayee", null, new { @class = "btn btn-default" })
+</p>
+<table class="table table-striped table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.FieldName)*@
+                @Html.DisplayName(FieldName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.January)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.February)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.March)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.April)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.May)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.June)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.July)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.August)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.September)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.October)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.November)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.December)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FieldName)
+            </td>
+            <td>
+                @{ if (item.January != 0)
+                    { @Html.DisplayFor(modelItem => item.January) }}
+            </td>
+            <td>
+                @{ if (item.February != 0)
+                    { @Html.DisplayFor(modelItem => item.February) }}
+            </td>
+            <td>
+                @{ if (item.March != 0)
+                    { @Html.DisplayFor(modelItem => item.March) }}
+            </td>
+            <td>
+                @{ if (item.April != 0)
+                    { @Html.DisplayFor(modelItem => item.April) }}
+            </td>
+            <td>
+                @{ if (item.May != 0)
+                    { @Html.DisplayFor(modelItem => item.May) }}
+            </td>
+            <td>
+                @{ if (item.June != 0)
+                    { @Html.DisplayFor(modelItem => item.June) }}
+            </td>
+            <td>
+                @{ if (item.July != 0)
+                    { @Html.DisplayFor(modelItem => item.July) }}
+            </td>
+            <td>
+                @{ if (item.August != 0)
+                    { @Html.DisplayFor(modelItem => item.August) }}
+            </td>
+            <td>
+                @{ if (item.September != 0)
+                    { @Html.DisplayFor(modelItem => item.September) }}
+            </td>
+            <td>
+                @{ if (item.October != 0)
+                    { @Html.DisplayFor(modelItem => item.October) }}
+            </td>
+            <td>
+                @{ if (item.November != 0)
+                    { @Html.DisplayFor(modelItem => item.November) }}
+            </td>
+            <td>
+                @{ if (item.December != 0)
+                    { @Html.DisplayFor(modelItem => item.December) }}
+            </td>
+            <td>
+                @{ if (item.Total != 0)
+                    { @Html.DisplayFor(modelItem => item.Total) }}
+            </td>
+        </tr>
+
+            JanTotal += item.January;
+            FebTotal += item.February;
+            MarTotal += item.March;
+            AprTotal += item.April;
+            MayTotal += item.May;
+            JunTotal += item.June;
+            JulTotal += item.July;
+            AugTotal += item.August;
+            SepTotal += item.September;
+            OctTotal += item.October;
+            NovTotal += item.November;
+            DecTotal += item.December;
+            Total += item.Total;
+
+        }
+    </tbody>
+    <tfoot class="tfoot-dark">
+        <tr>
+            <td>Total</td>
+            <td>
+                @{ if (JanTotal != 0)
+                    { @String.Format("{0:N2}", JanTotal)} }
+            </td>
+            <td>
+                @{ if (FebTotal != 0)
+                    { @String.Format("{0:N2}", FebTotal)} }
+            </td>
+            <td>
+                @{ if (MarTotal != 0)
+                    { @String.Format("{0:N2}", MarTotal)} }
+            </td>
+            <td>
+                @{ if (AprTotal != 0)
+                    { @String.Format("{0:N2}", AprTotal)} }
+            </td>
+            <td>
+                @{ if (MayTotal != 0)
+                    { @String.Format("{0:N2}", MayTotal)} }
+            </td>
+            <td>
+                @{ if (JunTotal != 0)
+                    { @String.Format("{0:N2}", JunTotal)} }
+            </td>
+            <td>
+                @{ if (JulTotal != 0)
+                    { @String.Format("{0:N2}", JulTotal)} }
+            </td>
+            <td>
+                @{ if (AugTotal != 0)
+                    { @String.Format("{0:N2}", AugTotal)} }
+            </td>
+            <td>
+                @{ if (SepTotal != 0)
+                    { @String.Format("{0:N2}", SepTotal)} }
+            </td>
+            <td>
+                @{ if (OctTotal != 0)
+                    { @String.Format("{0:N2}", OctTotal)} }
+            </td>
+            <td>
+                @{ if (NovTotal != 0)
+                    { @String.Format("{0:N2}", NovTotal)} }
+            </td>
+            <td>
+                @{ if (DecTotal != 0)
+                    { @String.Format("{0:N2}", DecTotal)} }
+            </td>
+            <td>
+                @{ if (Total != 0)
+                    { @String.Format("{0:N2}", Total)} }
+            </td>
+        </tr>
+
+</table>

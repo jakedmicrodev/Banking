@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Business.Entities.IdName>
+
+@{
+    ViewBag.Title = "Payees";
+}
+
+<h2>Payees</h2>
+
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot class="tfoot-dark">
+        <tr>
+            <td>@Model.Count()</td>
+        </tr>
+</table>
