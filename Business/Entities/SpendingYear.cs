@@ -6,11 +6,18 @@ namespace Business.Entities
 {
     public class SpendingYear
     {
+        [Display(Name = "Category")]
+        public int CategoryId { get; set; }
+
+        [Display(Name = "Category")]
+        public List<SelectListItem> Categories { get; set; }
+
         public int Id { get; set; }
 
         [Display(Name = "Year")]
         public string Name { get; set; }
 
         public List<SelectListItem> Years { get; set; }
+
     }
 }

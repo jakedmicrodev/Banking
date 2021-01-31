@@ -21,19 +21,14 @@ namespace Business.Services
             return new BankingDataContext().GetAnnualSpendingSubCategory(year);
         }
 
-        public List<AnnualSpending> GetAnnualSpendingPayee(int year)
+        public List<AnnualSpending> GetAnnualSpendingPayee(int year, int category)
         {
-            return new BankingDataContext().GetAnnualSpendingPayee(year);
+            return new BankingDataContext().GetAnnualSpendingPayee(year, category);
         }
 
         public List<IdName> GetCategories()
         {
             return new BankingDataContext().GetCategories();
-        }
-
-        public List<IdName> GetPayees()
-        {
-            return new BankingDataContext().GetPayees();
         }
 
         public List<MonthlySpending> GetMonthlySpendingCategory(int month, int year)
@@ -46,9 +41,14 @@ namespace Business.Services
             return new BankingDataContext().GetMonthlySpendingSubCategory(month, year);
         }
 
-        public List<MonthlySpending> GetMonthlySpendingPayee(int month, int year)
+        public List<MonthlySpending> GetMonthlySpendingPayee(int month, int year, int category)
         {
-            return new BankingDataContext().GetMonthlySpendingPayee(month, year);
+            return new BankingDataContext().GetMonthlySpendingPayee(month, year, category);
+        }
+
+        public List<IdName> GetPayees()
+        {
+            return new BankingDataContext().GetPayees();
         }
 
         public List<Spending> GetSpending()

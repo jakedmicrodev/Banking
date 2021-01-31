@@ -75,13 +75,22 @@ namespace Business.DataContexts
             }
         }
 
-        public List<AnnualSpending> GetAnnualSpendingPayee(int year)
+        public List<AnnualSpending> GetAnnualSpendingPayee(int year, int category)
         {
             using (IDbConnection conn = new SqlConnection(Settings.BankingConnectionString))
             {
-                string sql = string.Format("{0} {1}", StoredProcedures.GETANNUALSPENDINGPAYEE, "@Year");
+                string sql = string.Format("{0} {1}", StoredProcedures.GETANNUALSPENDINGPAYEE, "@Year, @CategoryId");
                 var parameters = new DynamicParameters();
                 parameters.Add("@Year", year, DbType.Int32, ParameterDirection.Input);
+                if (category > 0)
+                {
+                    parameters.Add("@CategoryId", category, DbType.Int32, ParameterDirection.Input);
+                }
+                else
+                {
+                    parameters.Add("@CategoryId", null, DbType.Int32, ParameterDirection.Input);
+                }
+
 
                 return conn.Query<AnnualSpending>(sql, parameters).ToList<AnnualSpending>().ToList();
             }
@@ -121,14 +130,22 @@ namespace Business.DataContexts
             }
         }
 
-        public List<MonthlySpending> GetMonthlySpendingPayee(int month, int year)
+        public List<MonthlySpending> GetMonthlySpendingPayee(int month, int year, int category)
         {
             using (IDbConnection conn = new SqlConnection(Settings.BankingConnectionString))
             {
-                string sql = string.Format("{0} {1}", StoredProcedures.GETMONTHLYSPENDINGPAYEE, "@Month, @Year");
+                string sql = string.Format("{0} {1}", StoredProcedures.GETMONTHLYSPENDINGPAYEE, "@Month, @Year, @CategoryId");
                 var parameters = new DynamicParameters();
                 parameters.Add("@Month", month, DbType.Int32, ParameterDirection.Input);
                 parameters.Add("@Year", year, DbType.Int32, ParameterDirection.Input);
+                if (category > 0)
+                {
+                    parameters.Add("@CategoryId", category, DbType.Int32, ParameterDirection.Input);
+                }
+                else
+                {
+                    parameters.Add("@CategoryId", null, DbType.Int32, ParameterDirection.Input);
+                }
 
                 return conn.Query<MonthlySpending>(sql, parameters).ToList<MonthlySpending>().ToList();
             }
@@ -256,6 +273,7 @@ namespace Business.DataContexts
 
             s.Months = FillList(GetMonths());
             s.Years = FillList(GetYears());
+            s.Categories = FillList(GetCategories());
 
             return s;
         }
@@ -265,6 +283,7 @@ namespace Business.DataContexts
             SpendingYear s = new SpendingYear();
 
             s.Years = FillList(GetYears());
+            s.Categories = FillList(GetCategories());
 
             return s;
         }
