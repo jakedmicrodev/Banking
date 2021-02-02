@@ -11,6 +11,21 @@ namespace Business.Services
             return new BankingDataContext().GetAccounts();
         }
 
+        public List<AnnualSpending> GetAnnualIncomeChecking2(int year)
+        {
+            return new BankingDataContext().GetAnnualIncomeChecking2(year);
+        }
+
+        public List<AnnualSpending> GetAnnualIncomeChecking3(int year)
+        {
+            return new BankingDataContext().GetAnnualIncomeChecking3(year);
+        }
+
+        public List<AnnualSpending> GetAnnualIncomeChecking4(int year)
+        {
+            return new BankingDataContext().GetAnnualIncomeChecking4(year);
+        }
+
         public List<AnnualSpending> GetAnnualSpendingCategory(int year)
         {
             return new BankingDataContext().GetAnnualSpendingCategory(year);
@@ -29,6 +44,31 @@ namespace Business.Services
         public List<IdName> GetCategories()
         {
             return new BankingDataContext().GetCategories();
+        }
+
+        public IncomeMonth GetIncomeMonthly ()
+        {
+            return new BankingDataContext().GetIncomeMonthly();
+        }
+
+        public IncomeYear GetIncomeYears()
+        {
+            return new BankingDataContext().GetIncomeYears();
+        }
+
+        public List<MonthlySpending> GetMonthlyIncomeChecking2(int month, int year)
+        {
+            return new BankingDataContext().GetMonthlyIncomeChecking2(month, year);
+        }
+
+        public List<MonthlySpending> GetMonthlyIncomeChecking3(int month, int year)
+        {
+            return new BankingDataContext().GetMonthlyIncomeChecking3(month, year);
+        }
+
+        public List<MonthlySpending> GetMonthlyIncomeChecking4(int month, int year)
+        {
+            return new BankingDataContext().GetMonthlyIncomeChecking4(month, year);
         }
 
         public List<MonthlySpending> GetMonthlySpendingCategory(int month, int year)

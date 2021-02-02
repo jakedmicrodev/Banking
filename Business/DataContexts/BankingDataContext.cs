@@ -51,6 +51,42 @@ namespace Business.DataContexts
             }
         }
 
+        public List<AnnualSpending> GetAnnualIncomeChecking2(int year)
+        {
+            using (IDbConnection conn = new SqlConnection(Settings.BankingConnectionString))
+            {
+                string sql = string.Format("{0} {1}", StoredProcedures.GETANNUALINCOMECHECKING2, "@Year");
+                var parameters = new DynamicParameters();
+                parameters.Add("@Year", year, DbType.Int32, ParameterDirection.Input);
+
+                return conn.Query<AnnualSpending>(sql, parameters).ToList<AnnualSpending>().ToList();
+            }
+        }
+
+        public List<AnnualSpending> GetAnnualIncomeChecking3(int year)
+        {
+            using (IDbConnection conn = new SqlConnection(Settings.BankingConnectionString))
+            {
+                string sql = string.Format("{0} {1}", StoredProcedures.GETANNUALINCOMECHECKING3, "@Year");
+                var parameters = new DynamicParameters();
+                parameters.Add("@Year", year, DbType.Int32, ParameterDirection.Input);
+
+                return conn.Query<AnnualSpending>(sql, parameters).ToList<AnnualSpending>().ToList();
+            }
+        }
+
+        public List<AnnualSpending> GetAnnualIncomeChecking4(int year)
+        {
+            using (IDbConnection conn = new SqlConnection(Settings.BankingConnectionString))
+            {
+                string sql = string.Format("{0} {1}", StoredProcedures.GETANNUALINCOMECHECKING4, "@Year");
+                var parameters = new DynamicParameters();
+                parameters.Add("@Year", year, DbType.Int32, ParameterDirection.Input);
+
+                return conn.Query<AnnualSpending>(sql, parameters).ToList<AnnualSpending>().ToList();
+            }
+        }
+
         public List<AnnualSpending> GetAnnualSpendingCategory(int year)
         {
             using (IDbConnection conn = new SqlConnection(Settings.BankingConnectionString))
@@ -109,6 +145,64 @@ namespace Business.DataContexts
             using (IDbConnection conn = new SqlConnection(Settings.BankingConnectionString))
             {
                 return conn.Query<IdName>(StoredProcedures.GETCATEGORIES).ToList<IdName>();
+            }
+        }
+
+        public IncomeMonth GetIncomeMonthly()
+        {
+            IncomeMonth i = new IncomeMonth();
+
+            i.Months = FillList(GetMonths());
+            i.Years = FillList(GetYears());
+
+            return i;
+        }
+
+        public IncomeYear GetIncomeYears()
+        {
+            IncomeYear i = new IncomeYear();
+
+            i.Years = FillList(GetYears());
+
+            return i;
+        }
+
+        public List<MonthlySpending> GetMonthlyIncomeChecking2(int month, int year)
+        {
+            using (IDbConnection conn = new SqlConnection(Settings.BankingConnectionString))
+            {
+                string sql = string.Format("{0} {1}", StoredProcedures.GETMONTHLYINCOMECHECKING2, "@Month, @Year");
+                var parameters = new DynamicParameters();
+                parameters.Add("@Month", month, DbType.Int32, ParameterDirection.Input);
+                parameters.Add("@Year", year, DbType.Int32, ParameterDirection.Input);
+
+                return conn.Query<MonthlySpending>(sql, parameters).ToList<MonthlySpending>().ToList();
+            }
+        }
+
+        public List<MonthlySpending> GetMonthlyIncomeChecking3(int month, int year)
+        {
+            using (IDbConnection conn = new SqlConnection(Settings.BankingConnectionString))
+            {
+                string sql = string.Format("{0} {1}", StoredProcedures.GETMONTHLYINCOMECHECKING3, "@Month, @Year");
+                var parameters = new DynamicParameters();
+                parameters.Add("@Month", month, DbType.Int32, ParameterDirection.Input);
+                parameters.Add("@Year", year, DbType.Int32, ParameterDirection.Input);
+
+                return conn.Query<MonthlySpending>(sql, parameters).ToList<MonthlySpending>().ToList();
+            }
+        }
+
+        public List<MonthlySpending> GetMonthlyIncomeChecking4(int month, int year)
+        {
+            using (IDbConnection conn = new SqlConnection(Settings.BankingConnectionString))
+            {
+                string sql = string.Format("{0} {1}", StoredProcedures.GETMONTHLYINCOMECHECKING4, "@Month, @Year");
+                var parameters = new DynamicParameters();
+                parameters.Add("@Month", month, DbType.Int32, ParameterDirection.Input);
+                parameters.Add("@Year", year, DbType.Int32, ParameterDirection.Input);
+
+                return conn.Query<MonthlySpending>(sql, parameters).ToList<MonthlySpending>().ToList();
             }
         }
 

@@ -179,11 +179,18 @@
     <Content Include="Views\Spending\MonthlySpendingPayee.cshtml" />
     <Content Include="Views\Payee\Index.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Income\AnnualIncomeChecking2.cshtml" />
+    <Content Include="Views\Income\AnnualIncomeChecking3.cshtml" />
+    <Content Include="Views\Income\AnnualIncomeChecking4.cshtml" />
+    <Content Include="Views\Income\AnnualIncomeResults.cshtml" />
+    <Content Include="Views\Income\MonthlyIncomeChecking2.cshtml" />
+    <Content Include="Views\Income\MonthlyIncomeChecking3.cshtml" />
+    <Content Include="Views\Income\MonthlyIncomeChecking4.cshtml" />
+    <Content Include="Views\Income\MonthlyIncomeResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Income\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
