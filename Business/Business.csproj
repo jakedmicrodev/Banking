@@ -74,6 +74,8 @@
     <Compile Include="Entities\Account.cs" />
     <Compile Include="Entities\AnnualSpending.cs" />
     <Compile Include="Entities\IdName.cs" />
+    <Compile Include="Entities\IncomeMonth.cs" />
+    <Compile Include="Entities\IncomeYear.cs" />
     <Compile Include="Entities\MonthlySpending.cs" />
     <Compile Include="Entities\Spending.cs" />
     <Compile Include="Entities\SpendingMonthly.cs" />

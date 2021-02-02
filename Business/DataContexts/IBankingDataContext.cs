@@ -19,13 +19,13 @@ namespace Business.DataContexts
 
         List<AnnualSpending> GetAnnualSpendingSubCategory(int year);
 
-        List<AnnualSpending> GetAnnualSpendingPayee(int year, int category);
+        List<AnnualSpending> GetAnnualSpendingPayee(int year, int category, int subcategory);
 
         List<IdName> GetCategories();
 
         List<MonthlySpending> GetMonthlySpendingCategory(int month, int year);
 
-        List<MonthlySpending> GetMonthlySpendingPayee(int month, int year, int category);
+        List<MonthlySpending> GetMonthlySpendingPayee(int month, int year, int category, int subcategory);
 
         List<MonthlySpending> GetMonthlySpendingSubCategory(int month, int year);
 

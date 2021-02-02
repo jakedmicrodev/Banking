@@ -12,6 +12,12 @@ namespace Business.Entities
         [Display(Name = "Category")]
         public List<SelectListItem> Categories { get; set; }
 
+        [Display(Name = "Sub Category")]
+        public int SubCategoryId { get; set; }
+
+        [Display(Name = "Sub Category")]
+        public List<SelectListItem> SubCategories { get; set; }
+
         public int Id { get; set; }
 
         [Display(Name = "Year")]

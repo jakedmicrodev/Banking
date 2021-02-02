@@ -159,7 +159,7 @@ namespace UI.Controllers
         [HttpPost]
         public ActionResult AnnualSpendingPayee(SpendingYear s)
         {
-            List<AnnualSpending> l = new BankingService().GetAnnualSpendingPayee(s.Id, s.CategoryId);
+            List<AnnualSpending> l = new BankingService().GetAnnualSpendingPayee(s.Id, s.CategoryId, s.SubCategoryId);
             TempData["AnnualSpending"] = l;
             TempData["FieldName"] = "Payee";
             TempData["Year"] = s.Id;
@@ -226,7 +226,7 @@ namespace UI.Controllers
         [HttpPost]
         public ActionResult MonthlySpendingPayee(SpendingMonthly s)
         {
-            List<MonthlySpending> l = new BankingService().GetMonthlySpendingPayee(s.MonthId, s.YearId, s.CategoryId);
+            List<MonthlySpending> l = new BankingService().GetMonthlySpendingPayee(s.MonthId, s.YearId, s.CategoryId, s.SubCategoryId);
             TempData["MonthlySpending"] = l;
             TempData["FieldName"] = "Payee";
             TempData["Year"] = s.YearId;
