@@ -187,6 +187,8 @@
     <Content Include="Views\Income\MonthlyIncomeChecking3.cshtml" />
     <Content Include="Views\Income\MonthlyIncomeChecking4.cshtml" />
     <Content Include="Views\Income\MonthlyIncomeResults.cshtml" />
+    <Content Include="Views\Spending\MonthlySpendingBetweenPaydays.cshtml" />
+    <Content Include="Views\Spending\MonthlySpendingBetweenPaydaysResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -206,6 +206,19 @@ namespace Business.DataContexts
             }
         }
 
+        public List<MonthlySpending> GetMonthlySpendingBetweenPaydays(int month, int year)
+        {
+            using (IDbConnection conn = new SqlConnection(Settings.BankingConnectionString))
+            {
+                string sql = string.Format("{0} {1}", StoredProcedures.GETMONTHLYSPENDINGBETWEENPAYDAYS, "@Month, @Year");
+                var parameters = new DynamicParameters();
+                parameters.Add("@Month", month, DbType.Int32, ParameterDirection.Input);
+                parameters.Add("@Year", year, DbType.Int32, ParameterDirection.Input);
+
+                return conn.Query<MonthlySpending>(sql, parameters).ToList<MonthlySpending>().ToList();
+            }
+        }
+
         public List<MonthlySpending> GetMonthlySpendingCategory(int month, int year)
         {
             using (IDbConnection conn = new SqlConnection(Settings.BankingConnectionString))

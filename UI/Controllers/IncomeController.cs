@@ -86,7 +86,7 @@ namespace UI.Controllers
             }
         }
 
-        public ActionResult AnnualIncomeChecking()
+        public ActionResult AnnualIncomeChecking2()
         {
             IncomeYear s = new BankingService().GetIncomeYears();
 
@@ -94,9 +94,47 @@ namespace UI.Controllers
         }
 
         [HttpPost]
-        public ActionResult AnnualIncomeChecking(IncomeYear s)
+        public ActionResult AnnualIncomeChecking2(IncomeYear s)
         {
-            List<AnnualSpending> l = new BankingService().GetAnnualIncomeChecking(s.Id);
+            List<AnnualSpending> l = new BankingService().GetAnnualIncomeChecking2(s.Id);
+            TempData["AnnualIncome"] = l;
+            TempData["FieldName"] = "Account";
+            TempData["Year"] = s.Id;
+            TempData["Month"] = "";
+
+            return Redirect("AnnualIncomeResults");
+        }
+
+        public ActionResult AnnualIncomeChecking3()
+        {
+            IncomeYear s = new BankingService().GetIncomeYears();
+
+            return View(s);
+        }
+
+        [HttpPost]
+        public ActionResult AnnualIncomeChecking3(IncomeYear s)
+        {
+            List<AnnualSpending> l = new BankingService().GetAnnualIncomeChecking3(s.Id);
+            TempData["AnnualIncome"] = l;
+            TempData["FieldName"] = "Account";
+            TempData["Year"] = s.Id;
+            TempData["Month"] = "";
+
+            return Redirect("AnnualIncomeResults");
+        }
+
+        public ActionResult AnnualIncomeChecking4()
+        {
+            IncomeYear s = new BankingService().GetIncomeYears();
+
+            return View(s);
+        }
+
+        [HttpPost]
+        public ActionResult AnnualIncomeChecking4(IncomeYear s)
+        {
+            List<AnnualSpending> l = new BankingService().GetAnnualIncomeChecking4(s.Id);
             TempData["AnnualIncome"] = l;
             TempData["FieldName"] = "Account";
             TempData["Year"] = s.Id;
@@ -115,7 +153,7 @@ namespace UI.Controllers
             return View(v);
         }
 
-        public ActionResult MonthlyIncomeChecking()
+        public ActionResult MonthlyIncomeChecking2()
         {
                 IncomeMonth s = new BankingService().GetIncomeMonthly();
 
@@ -123,9 +161,49 @@ namespace UI.Controllers
         }
 
         [HttpPost]
-        public ActionResult MonthlyIncomeChecking(IncomeMonth s)
+        public ActionResult MonthlyIncomeChecking2(IncomeMonth s)
         {
-            List<MonthlySpending> l = new BankingService().GetMonthlyIncomeChecking(s.MonthId, s.YearId);
+            List<MonthlySpending> l = new BankingService().GetMonthlyIncomeChecking2(s.MonthId, s.YearId);
+            TempData["MonthlylIncome"] = l;
+            TempData["FieldName"] = "Account";
+            TempData["Year"] = s.YearId;
+            TempData["Month"] = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(s.MonthId);
+
+
+            return Redirect("MonthlyIncomeResults");
+        }
+
+        public ActionResult MonthlyIncomeChecking3()
+        {
+            IncomeMonth s = new BankingService().GetIncomeMonthly();
+
+            return View(s);
+        }
+
+        [HttpPost]
+        public ActionResult MonthlyIncomeChecking3(IncomeMonth s)
+        {
+            List<MonthlySpending> l = new BankingService().GetMonthlyIncomeChecking3(s.MonthId, s.YearId);
+            TempData["MonthlylIncome"] = l;
+            TempData["FieldName"] = "Account";
+            TempData["Year"] = s.YearId;
+            TempData["Month"] = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(s.MonthId);
+
+
+            return Redirect("MonthlyIncomeResults");
+        }
+
+        public ActionResult MonthlyIncomeChecking4()
+        {
+            IncomeMonth s = new BankingService().GetIncomeMonthly();
+
+            return View(s);
+        }
+
+        [HttpPost]
+        public ActionResult MonthlyIncomeChecking4(IncomeMonth s)
+        {
+            List<MonthlySpending> l = new BankingService().GetMonthlyIncomeChecking4(s.MonthId, s.YearId);
             TempData["MonthlylIncome"] = l;
             TempData["FieldName"] = "Account";
             TempData["Year"] = s.YearId;

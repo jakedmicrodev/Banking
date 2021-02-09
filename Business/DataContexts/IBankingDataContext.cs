@@ -39,6 +39,8 @@ namespace Business.DataContexts
 
         List<MonthlySpending> GetMonthlyIncomeChecking4(int month, int year);
 
+        List<MonthlySpending> GetMonthlySpendingBetweenPaydays(int month, int year);
+
         List<MonthlySpending> GetMonthlySpendingCategory(int month, int year);
 
         List<MonthlySpending> GetMonthlySpendingPayee(int month, int year, int category, int subcategory);

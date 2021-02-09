@@ -178,6 +178,25 @@ namespace UI.Controllers
             return View(v);
         }
 
+        public ActionResult MonthlySpendingBetweenPaydays()
+        {
+            SpendingMonthly s = new BankingService().GetSpendingMonthly();
+
+            return View(s);
+        }
+
+        [HttpPost]
+        public ActionResult MonthlySpendingBetweenPaydays(SpendingMonthly s)
+        {
+            List<MonthlySpending> l = new BankingService().GetMonthlySpendingBetweenPaydays(s.MonthId, s.YearId);
+            TempData["MonthlySpending"] = l;
+            TempData["FieldName"] = "Category";
+            TempData["Year"] = s.YearId;
+            TempData["Month"] = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(s.MonthId); 
+
+            return Redirect("MonthlySpendingBetweenPaydaysResults");
+        }
+
         public ActionResult MonthlySpendingCategory()
         {
             SpendingMonthly s = new BankingService().GetSpendingMonthly();
@@ -192,7 +211,7 @@ namespace UI.Controllers
             TempData["MonthlySpending"] = l;
             TempData["FieldName"] = "Category";
             TempData["Year"] = s.YearId;
-            TempData["Month"] = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(s.MonthId); 
+            TempData["Month"] = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(s.MonthId);
 
             return Redirect("MonthlySpendingResults");
         }
@@ -237,6 +256,15 @@ namespace UI.Controllers
 
 
         public ActionResult MonthlySpendingResults()
+        {
+            List<MonthlySpending> v = TempData["MonthlySpending"] as List<MonthlySpending>;
+            ViewBag.FieldName = TempData["FieldName"];
+            ViewBag.Year = TempData["Year"];
+            ViewBag.Month = TempData["Month"];
+            return View(v);
+        }
+
+        public ActionResult MonthlySpendingBetweenPaydaysResults()
         {
             List<MonthlySpending> v = TempData["MonthlySpending"] as List<MonthlySpending>;
             ViewBag.FieldName = TempData["FieldName"];

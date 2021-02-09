@@ -14,6 +14,8 @@
         public const string GETMONTHLYINCOMECHECKING2 = "[dbo].[GetMonthlyIncomeChecking2]";
         public const string GETMONTHLYINCOMECHECKING3 = "[dbo].[GetMonthlyIncomeChecking3]";
         public const string GETMONTHLYINCOMECHECKING4 = "[dbo].[GetMonthlyIncomeChecking4]";
+        //public const string GETMONTHLYSPENDINGBETWEENPAYDAYS = "[dbo].[GetMonthlySpendingBetweenPaydays]";
+        public const string GETMONTHLYSPENDINGBETWEENPAYDAYS = "[dbo].[GetMonthlySpendingBetweenPaydaysPayees]";
         public const string GETMONTHLYSPENDINGCATEGORY = "[dbo].[GetMonthlySpendingCategory]";
         public const string GETMONTHLYSPENDINGSUBCATEGORY = "[dbo].[GetMonthlySpendingSubCategory]";
         public const string GETMONTHLYSPENDINGPAYEE = "[dbo].[GetMonthlySpendingPayee]";
