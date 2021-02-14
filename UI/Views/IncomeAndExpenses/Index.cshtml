@@ -26,33 +26,26 @@
     .title {
         color: #5caac1;
     }
-    
 </style>
 
 <div id="boxes">
     <h3 class="title">What would you like to view?</h3>
     <div class="row">
-        <a href=@Url.Action("Index", "Account")>
+        <a href=@Url.Action("Views", "Home")>
             <div class="column">
-                <h3>Accounts</h3>
+                <h3>Views</h3>
             </div>
         </a>
 
-        <a href=@Url.Action("Index", "Spending")>
+        <a href=@Url.Action("AnnualIncomeAndExpensesPayee", "IncomeAndExpenses")>
             <div class="column">
-                <h3>Expenses</h3>
+                <h3>Annual Income And Expenses</h3>
             </div>
         </a>
 
-        <a href=@Url.Action("Index", "IncomeAndExpenses")>
+        <a href=@Url.Action("MonthlyIncomeAndExpensesPayee", "IncomeAndExpenses")>
             <div class="column">
-                <h3>Income and Expenses</h3>
-            </div>
-        </a>
-
-        <a href=@Url.Action("Index", "Payee")>
-            <div class="column">
-                <h3>Payees</h3>
+                <h3>Monthly Income And Expenses</h3>
             </div>
         </a>
 

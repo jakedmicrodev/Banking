@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "Views";
+}
+
+<style>
+
+    .column {
+        float: left;
+        width: 255px;
+        height: 100px;
+        color: #fff;
+        padding: 10px;
+        margin: 10px;
+        background: #3db5da;
+        border-radius: 10px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .title {
+        color: #5caac1;
+    }
+</style>
+
+<div id="boxes">
+    <h3 class="title">What would you like to view?</h3>
+    <div class="row">
+        <a href=@Url.Action("Views", "Home")>
+            <div class="column">
+                <h3>Home</h3>
+            </div>
+        </a>
+
+        <a href=@Url.Action("Search", "Spending")>
+            <div class="column">
+                <h3>Search for Spending</h3>
+            </div>
+        </a>
+
+        <a href=@Url.Action("AnnualSpendingCategory", "Spending")>
+            <div class="column">
+                <h3>Annual Spending by Category</h3>
+            </div>
+        </a>
+
+        <a href=@Url.Action("AnnualSpendingSubCategory", "Spending")>
+            <div class="column">
+                <h3>Annual Spending by Sub Category</h3>
+            </div>
+        </a>
+
+        <a href=@Url.Action("AnnualSpendingPayee", "Spending")>
+            <div class="column">
+                <h3>Annual Spending by Payee</h3>
+            </div>
+        </a>
+
+        <a href=@Url.Action("MonthlySpendingBetweenPaydays", "Spending")>
+            <div class="column">
+                <h3>Monthly Spending Between Paydays</h3>
+            </div>
+        </a>
+
+        <a href=@Url.Action("MonthlySpendingCategory", "Spending")>
+            <div class="column">
+                <h3>Monthly Spending by Category</h3>
+            </div>
+        </a>
+
+        <a href=@Url.Action("MonthlySpendingSubCategory", "Spending")>
+            <div class="column">
+                <h3>Monthly Spending by Sub Category</h3>
+            </div>
+        </a>
+
+        <a href=@Url.Action("MonthlySpendingPayee", "Spending")>
+            <div class="column">
+                <h3>Monthly Spending by Payee</h3>
+            </div>
+        </a>
+
+    </div>
+</div>

@@ -11,19 +11,19 @@ namespace UI.Controllers
         // GET: Spending
         public ActionResult Index()
         {
-            return RedirectToAction("Search");
+            return View();
         }
 
         // GET: Spending/Details/5
         public ActionResult Details(int id)
         {
-            return RedirectToAction("Search");
+            return RedirectToAction("Index");
         }
 
         // GET: Spending/Create
         public ActionResult Create()
         {
-            return RedirectToAction("Search");
+            return RedirectToAction("Index");
         }
 
         // POST: Spending/Create
@@ -34,7 +34,7 @@ namespace UI.Controllers
             {
                 // TODO: Add insert logic here
 
-                return RedirectToAction("Search");
+                return RedirectToAction("Index");
             }
             catch
             {
@@ -45,7 +45,7 @@ namespace UI.Controllers
         // GET: Spending/Edit/5
         public ActionResult Edit(int id)
         {
-            return RedirectToAction("Search");
+            return RedirectToAction("Index");
         }
 
         // POST: Spending/Edit/5
@@ -56,7 +56,7 @@ namespace UI.Controllers
             {
                 // TODO: Add update logic here
 
-                return RedirectToAction("Search");
+                return RedirectToAction("Index");
             }
             catch
             {
@@ -67,7 +67,7 @@ namespace UI.Controllers
         // GET: Spending/Delete/5
         public ActionResult Delete(int id)
         {
-            return RedirectToAction("Search");
+            return RedirectToAction("Index");
         }
 
         // POST: Spending/Delete/5
@@ -78,7 +78,7 @@ namespace UI.Controllers
             {
                 // TODO: Add delete logic here
 
-                return RedirectToAction("Search");
+                return RedirectToAction("Index");
             }
             catch
             {

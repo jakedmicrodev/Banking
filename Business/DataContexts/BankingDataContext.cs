@@ -167,6 +167,19 @@ namespace Business.DataContexts
             return i;
         }
 
+        public List<MonthlySpending> GetMonthlyIncomeAndExpenses(int month, int year)
+        {
+            using (IDbConnection conn = new SqlConnection(Settings.BankingConnectionString))
+            {
+                string sql = string.Format("{0} {1}", StoredProcedures.GETMONTHLYINCOMEANDEXPENSES, "@Month, @Year");
+                var parameters = new DynamicParameters();
+                parameters.Add("@Month", month, DbType.Int32, ParameterDirection.Input);
+                parameters.Add("@Year", year, DbType.Int32, ParameterDirection.Input);
+
+                return conn.Query<MonthlySpending>(sql, parameters).ToList<MonthlySpending>().ToList();
+            }
+        }
+
         public List<MonthlySpending> GetMonthlyIncomeChecking2(int month, int year)
         {
             using (IDbConnection conn = new SqlConnection(Settings.BankingConnectionString))

@@ -11,6 +11,7 @@
         public const string GETANNUALSPENDINGPAYEE = "[dbo].[GetAnnualSpendingPayee]";
         public const string GETCATEGORIES = "[dbo].[GetCategories]";
         public const string GETPAYEES = "[dbo].[GetPayees]";
+        public const string GETMONTHLYINCOMEANDEXPENSES = "[dbo].[GetMonthlyIncomeAndExpenses]";
         public const string GETMONTHLYINCOMECHECKING2 = "[dbo].[GetMonthlyIncomeChecking2]";
         public const string GETMONTHLYINCOMECHECKING3 = "[dbo].[GetMonthlyIncomeChecking3]";
         public const string GETMONTHLYINCOMECHECKING4 = "[dbo].[GetMonthlyIncomeChecking4]";

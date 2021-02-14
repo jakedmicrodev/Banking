@@ -1,0 +1,460 @@
+﻿@model IEnumerable<Business.Entities.MonthlySpending>
+
+@{
+    ViewBag.Title = "Monthly Income And Expenses";
+    string FieldName = ViewBag.FieldName;
+    string MonthYear = string.Format("{0} {1}", ViewBag.Month, ViewBag.Year);
+
+    decimal Total1 = 0;
+    decimal Total2 = 0;
+    decimal Total3 = 0;
+    decimal Total4 = 0;
+    decimal Total5 = 0;
+    decimal Total6 = 0;
+    decimal Total7 = 0;
+    decimal Total8 = 0;
+    decimal Total9 = 0;
+    decimal Total10 = 0;
+    decimal Total11 = 0;
+    decimal Total12 = 0;
+    decimal Total13 = 0;
+    decimal Total14 = 0;
+    decimal Total15 = 0;
+    decimal Total16 = 0;
+    decimal Total17 = 0;
+    decimal Total18 = 0;
+    decimal Total19 = 0;
+    decimal Total20 = 0;
+    decimal Total21 = 0;
+    decimal Total22 = 0;
+    decimal Total23 = 0;
+    decimal Total24 = 0;
+    decimal Total25 = 0;
+    decimal Total26 = 0;
+    decimal Total27 = 0;
+    decimal Total28 = 0;
+    decimal Total29 = 0;
+    decimal Total30 = 0;
+    decimal Total31 = 0;
+    decimal Total = 0;
+}
+
+<h2>Monthly Income And Expenses @Html.DisplayName(MonthYear)</h2>
+
+@*<p>
+    @Html.ActionLink("Spending by Category", "MonthlySpendingCategory", null, new { @class = "btn btn-default" })
+    @Html.ActionLink("Spending by Sub Category", "MonthlySpendingSubCategory", null, new { @class = "btn btn-default" })
+    @Html.ActionLink("Spending by Payee", "MonthlySpendingPayee", null, new { @class = "btn btn-default" })
+</p>*@
+
+<table class="table table-striped table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.FieldName)*@
+                @Html.DisplayName(FieldName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.One)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Two)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Three)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Four)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Five)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Six)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seven)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Eight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ten)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Eleven)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Twelve)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Thirteen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fourteen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fifteen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sixteen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seventeen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Eighteen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nineteen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Twenty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TwentyOne)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TwentyTwo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TwentyThree)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TwentyFour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TwentyFive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TwentySix)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TwentySeven)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TwentyEight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TwentyNine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Thirty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThirtyOne)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FieldName)
+                </td>
+                <td>
+                    @{ if (item.One != 0)
+                        { @Html.DisplayFor(modelItem => item.One) }}
+                </td>
+                <td>
+                    @{ if (item.Two != 0)
+                        { @Html.DisplayFor(modelItem => item.Two) }}
+                </td>
+                <td>
+                    @{ if (item.Three != 0)
+                        { @Html.DisplayFor(modelItem => item.Three) }}
+                </td>
+                <td>
+                    @{ if (item.Four != 0)
+                        { @Html.DisplayFor(modelItem => item.Four) }}
+                </td>
+                <td>
+                    @{ if (item.Five != 0)
+                        { @Html.DisplayFor(modelItem => item.Five) }}
+                </td>
+                <td>
+                    @{ if (item.Six != 0)
+                        { @Html.DisplayFor(modelItem => item.Six) }}
+                </td>
+                <td>
+                    @{ if (item.Seven != 0)
+                        { @Html.DisplayFor(modelItem => item.Seven) }}
+                </td>
+                <td>
+                    @{ if (item.Eight != 0)
+                        { @Html.DisplayFor(modelItem => item.Eight) }}
+                </td>
+                <td>
+                    @{ if (item.Nine != 0)
+                        { @Html.DisplayFor(modelItem => item.Nine) }}
+                </td>
+                <td>
+                    @{ if (item.Ten != 0)
+                        { @Html.DisplayFor(modelItem => item.Ten) }}
+                </td>
+                <td>
+                    @{ if (item.Eleven != 0)
+                        { @Html.DisplayFor(modelItem => item.Eleven) }}
+                </td>
+                <td>
+                    @{ if (item.Twelve != 0)
+                        { @Html.DisplayFor(modelItem => item.Twelve) }}
+                </td>
+                <td>
+                    @{ if (item.Thirteen != 0)
+                        { @Html.DisplayFor(modelItem => item.Thirteen) }}
+                </td>
+                <td>
+                    @{ if (item.Fourteen != 0)
+                        { @Html.DisplayFor(modelItem => item.Fourteen) }}
+                </td>
+                <td>
+                    @{ if (item.Fifteen != 0)
+                        { @Html.DisplayFor(modelItem => item.Fifteen) }}
+                </td>
+                <td>
+                    @{ if (item.Sixteen != 0)
+                        { @Html.DisplayFor(modelItem => item.Sixteen) }}
+                </td>
+                <td>
+                    @{ if (item.Seventeen != 0)
+                        { @Html.DisplayFor(modelItem => item.Seventeen) }}
+                </td>
+                <td>
+                    @{ if (item.Eighteen != 0)
+                        { @Html.DisplayFor(modelItem => item.Eighteen) }}
+                </td>
+                <td>
+                    @{ if (item.Nineteen != 0)
+                        { @Html.DisplayFor(modelItem => item.Nineteen) }}
+                </td>
+                <td>
+                    @{ if (item.Twenty != 0)
+                        { @Html.DisplayFor(modelItem => item.Twenty) }}
+                </td>
+                <td>
+                    @{ if (item.TwentyOne != 0)
+                        { @Html.DisplayFor(modelItem => item.TwentyOne) }}
+                </td>
+                <td>
+                    @{ if (item.TwentyTwo != 0)
+                        { @Html.DisplayFor(modelItem => item.TwentyTwo) }}
+                </td>
+                <td>
+                    @{ if (item.TwentyThree != 0)
+                        { @Html.DisplayFor(modelItem => item.TwentyThree) }}
+                </td>
+                <td>
+                    @{ if (item.TwentyFour != 0)
+                        { @Html.DisplayFor(modelItem => item.TwentyFour) }}
+                </td>
+                <td>
+                    @{ if (item.TwentyFive != 0)
+                        { @Html.DisplayFor(modelItem => item.TwentyFive) }}
+                </td>
+                <td>
+                    @{ if (item.TwentySix != 0)
+                        { @Html.DisplayFor(modelItem => item.TwentySix) }}
+                </td>
+                <td>
+                    @{ if (item.TwentySeven != 0)
+                        { @Html.DisplayFor(modelItem => item.TwentySeven) }}
+                </td>
+                <td>
+                    @{ if (item.TwentyEight != 0)
+                        { @Html.DisplayFor(modelItem => item.TwentyEight) }}
+                </td>
+                <td>
+                    @{ if (item.TwentyNine != 0)
+                        { @Html.DisplayFor(modelItem => item.TwentyNine) }}
+                </td>
+                <td>
+                    @{ if (item.Thirty != 0)
+                        { @Html.DisplayFor(modelItem => item.Thirty) }}
+                </td>
+                <td>
+                    @{ if (item.ThirtyOne != 0)
+                        { @Html.DisplayFor(modelItem => item.ThirtyOne) }}
+                </td>
+                <td>
+                    @{ if (item.Total != 0)
+                        { @Html.DisplayFor(modelItem => item.Total) }}
+                </td>
+            </tr>
+
+            Total1 += item.One;
+            Total2 += item.Two;
+            Total3 += item.Three;
+            Total4 += item.Four;
+            Total5 += item.Five;
+            Total6 += item.Six;
+            Total7 += item.Seven;
+            Total8 += item.Eight;
+            Total9 += item.Nine;
+            Total10 += item.Ten;
+            Total11 += item.Eleven;
+            Total12 += item.Twelve;
+            Total13 += item.Thirteen;
+            Total14 += item.Fourteen;
+            Total15 += item.Fifteen;
+            Total16 += item.Sixteen;
+            Total17 += item.Seventeen;
+            Total18 += item.Eighteen;
+            Total19 += item.Nineteen;
+            Total20 += item.Twenty;
+            Total21 += item.TwentyOne;
+            Total22 += item.TwentyTwo;
+            Total23 += item.TwentyThree;
+            Total24 += item.TwentyFour;
+            Total25 += item.TwentyFive;
+            Total26 += item.TwentySix;
+            Total27 += item.TwentySeven;
+            Total28 += item.TwentyEight;
+            Total29 += item.TwentyNine;
+            Total30 += item.Thirty;
+            Total31 += item.ThirtyOne;
+            Total += item.Total;
+
+        }
+    </tbody>
+    <tfoot class="tfoot-dark">
+        <tr>
+            <td>Total</td>
+            <td>
+                @{ if (Total1 != 0)
+                    { @String.Format("{0:N2}", Total1)} }
+            </td>
+            <td>
+                @{ if (Total2 != 0)
+                    { @String.Format("{0:N2}", Total2)} }
+            </td>
+            <td>
+                @{ if (Total3 != 0)
+                    { @String.Format("{0:N2}", Total3)} }
+            </td>
+            <td>
+                @{ if (Total4 != 0)
+                    { @String.Format("{0:N2}", Total4)} }
+            </td>
+            <td>
+                @{ if (Total5 != 0)
+                    { @String.Format("{0:N2}", Total5)} }
+            </td>
+            <td>
+                @{ if (Total6 != 0)
+                    { @String.Format("{0:N2}", Total6)} }
+            </td>
+            <td>
+                @{ if (Total7 != 0)
+                    { @String.Format("{0:N2}", Total7)} }
+            </td>
+            <td>
+                @{ if (Total8 != 0)
+                    { @String.Format("{0:N2}", Total8)} }
+            </td>
+            <td>
+                @{ if (Total9 != 0)
+                    { @String.Format("{0:N2}", Total9)} }
+            </td>
+            <td>
+                @{ if (Total10 != 0)
+                    { @String.Format("{0:N2}", Total10)} }
+            </td>
+            <td>
+                @{ if (Total11 != 0)
+                    { @String.Format("{0:N2}", Total11)} }
+            </td>
+            <td>
+                @{ if (Total12 != 0)
+                    { @String.Format("{0:N2}", Total12)} }
+            </td>
+            <td>
+                @{ if (Total13 != 0)
+                    { @String.Format("{0:N2}", Total13)} }
+            </td>
+            <td>
+                @{ if (Total14 != 0)
+                    { @String.Format("{0:N2}", Total14)} }
+            </td>
+            <td>
+                @{ if (Total15 != 0)
+                    { @String.Format("{0:N2}", Total15)} }
+            </td>
+            <td>
+                @{ if (Total16 != 0)
+                    { @String.Format("{0:N2}", Total16)} }
+            </td>
+            <td>
+                @{ if (Total17 != 0)
+                    { @String.Format("{0:N2}", Total17)} }
+            </td>
+            <td>
+                @{ if (Total18 != 0)
+                    { @String.Format("{0:N2}", Total18)} }
+            </td>
+            <td>
+                @{ if (Total19 != 0)
+                    { @String.Format("{0:N2}", Total19)} }
+            </td>
+            <td>
+                @{ if (Total20 != 0)
+                    { @String.Format("{0:N2}", Total20)} }
+            </td>
+            <td>
+                @{ if (Total21 != 0)
+                    { @String.Format("{0:N2}", Total21)} }
+            </td>
+            <td>
+                @{ if (Total22 != 0)
+                    { @String.Format("{0:N2}", Total22)} }
+            </td>
+            <td>
+                @{ if (Total23 != 0)
+                    { @String.Format("{0:N2}", Total23)} }
+            </td>
+            <td>
+                @{ if (Total24 != 0)
+                    { @String.Format("{0:N2}", Total24)} }
+            </td>
+            <td>
+                @{ if (Total25 != 0)
+                    { @String.Format("{0:N2}", Total25)} }
+            </td>
+            <td>
+                @{ if (Total26 != 0)
+                    { @String.Format("{0:N2}", Total26)} }
+            </td>
+            <td>
+                @{ if (Total27 != 0)
+                    { @String.Format("{0:N2}", Total27)} }
+            </td>
+            <td>
+                @{ if (Total28 != 0)
+                    { @String.Format("{0:N2}", Total28)} }
+            </td>
+            <td>
+                @{ if (Total29 != 0)
+                    { @String.Format("{0:N2}", Total29)} }
+            </td>
+            <td>
+                @{ if (Total30 != 0)
+                    { @String.Format("{0:N2}", Total30)} }
+            </td>
+            <td>
+                @{ if (Total31 != 0)
+                    { @String.Format("{0:N2}", Total31)} }
+            </td>
+            <td>
+                @{ if (Total != 0)
+                    { @String.Format("{0:N2}", Total)} }
+            </td>
+        </tr>
+
+</table>

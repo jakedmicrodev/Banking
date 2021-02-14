@@ -56,6 +56,11 @@ namespace Business.Services
             return new BankingDataContext().GetIncomeYears();
         }
 
+        public List<MonthlySpending> GetMonthlyIncomeAndExpenses(int month, int year)
+        {
+            return new BankingDataContext().GetMonthlyIncomeAndExpenses(month, year);
+        }
+
         public List<MonthlySpending> GetMonthlyIncomeChecking2(int month, int year)
         {
             return new BankingDataContext().GetMonthlyIncomeChecking2(month, year);

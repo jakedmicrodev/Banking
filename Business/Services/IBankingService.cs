@@ -33,6 +33,8 @@ namespace Business.Services
 
         List<MonthlySpending> GetMonthlyIncomeChecking4(int month, int year);
 
+        List<MonthlySpending> GetMonthlyIncomeAndExpenses(int month, int year);
+
         List<MonthlySpending> GetMonthlySpendingBetweenPaydays(int month, int year);
 
         List<MonthlySpending> GetMonthlySpendingCategory(int month, int year);
